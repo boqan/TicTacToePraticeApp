@@ -22,6 +22,7 @@ void Draw()
 
 void Draw2()
 {
+	system("cls");
 	std::cout << "Tic Tac Toe v1.0" << std::endl;
 	for (std::vector<char> matrix1D : matrix) 
 	{	// these 2 for cycles print the matrix // it uses the iterator of STL instead of I and J
@@ -72,7 +73,7 @@ void Input()
 
 char Win()
 {
-	char Winner = 'N';
+	char Winner = '/';
 
 	for (int i = 0; i < 3; i++)               // check if rows/columns are equal
 	{
@@ -91,7 +92,6 @@ char Win()
 	if (matrix[0][2] == matrix[1][1] && matrix[2][0] == matrix[1][1]) 
 		Winner = matrix[0][2];
 	return Winner;
-	return '/';
 }
 
 void TogglePlayer()
@@ -104,10 +104,11 @@ void TogglePlayer()
 
 
 int main() {
-
-	Draw();
+	int DrawCheck = 0;
+	Draw2();
 	while(1)
 	{
+		DrawCheck++;
 		Input();
 		Draw2();
 		if (Win() == 'X') {
@@ -118,6 +119,11 @@ int main() {
 			std::cout << "O wins!" << std::endl;
 			break;
 		}
+		else if (Win() == '/' && DrawCheck == 9) {
+			std::cout << "It's a draw! Nobody wins." << std::endl;
+			break;
+		}
+		
 		TogglePlayer();
 		
 	}
