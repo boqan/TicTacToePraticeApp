@@ -2,6 +2,7 @@
 #include <string.h>
 #include <vector>
 
+
 std::vector<std::vector<char>> matrix = { {'1' , '2', '3'}, 
 										  {'4', '5', '6'}, 
 										  {'7', '8', '9'} };
@@ -37,36 +38,90 @@ void Draw2()
 void Input() 
 {
 	int input;
+	std::cout << "It's " << player << "'s turn. ";
 	std::cout << "Press the number of the spot you want to tick: " << std::endl;
 	std::cin >> input;
 	
 	switch (input) {
 	case 1:
-		matrix[0][0] = player;
+		if (matrix[0][0] == '1')
+			matrix[0][0] = player;
+		else {
+			std::cout << "Field is already full, choose another one!" << std::endl;
+			Input();
+		}
 		break;
+
 	case 2:
-		matrix[0][1] = player;
+		if (matrix[0][1] == '2')
+			matrix[0][1] = player;
+		else {
+			std::cout << "Field is already full, choose another one!" << std::endl;
+			Input();
+		}
 		break;
+
 	case 3:
-		matrix[0][2] = player;
+		if (matrix[0][2] == '3')
+			matrix[0][2] = player;
+		else {
+			std::cout << "Field is already full, choose another one!" << std::endl;
+			Input();
+		}
 		break;
+
 	case 4:
-		matrix[1][0] = player;
+		if (matrix[1][0] == '4')
+			matrix[1][0] = player;
+		else {
+			std::cout << "Field is already full, choose another one!" << std::endl;
+			Input();
+		}
 		break;
+
 	case 5:
-		matrix[1][1] = player;
+		if (matrix[1][1] == '5')
+			matrix[1][1] = player;
+		else {
+			std::cout << "Field is already full, choose another one!" << std::endl;
+			Input();
+		}
 		break;
+
 	case 6:
-		matrix[1][2] = player;
+		if (matrix[1][2] == '6')
+			matrix[1][2] = player;
+		else {
+			std::cout << "Field is already full, choose another one!" << std::endl;
+			Input();
+		}
 		break;
+
 	case 7:
-		matrix[2][0] = player;
+		if (matrix[2][0] == '7')
+			matrix[2][0] = player;
+		else {
+			std::cout << "Field is already full, choose another one!" << std::endl;
+			Input();
+		}
 		break;
+
 	case 8:
-		matrix[2][1] = player;
+		if (matrix[2][1] == '8')
+			matrix[2][1] = player;
+		else {
+			std::cout << "Field is already full, choose another one!" << std::endl;
+			Input();
+		}
 		break;
+
 	case 9:
-		matrix[2][2] = player;
+		if (matrix[2][2] == '9')
+			matrix[2][2] = player;
+		else {
+			std::cout << "Field is already full, choose another one!" << std::endl;
+			Input();
+		}
 		break;
 	}
 }
